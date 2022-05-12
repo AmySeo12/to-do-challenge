@@ -1,0 +1,26 @@
+<nav class="navbar navbar-light bg-light">
+  <a class="nav-link disabled"><span>Usuario:</span> {{user}}</a>
+</nav>
+
+<div class="container pt-3">
+  <div class="row justify-content-center">
+    <div class="col-12 col-sm-11 col-md-8">
+      <div class="container mb-3">
+        <div class="row">
+          <div class="col-12 col-sm-2 col-lg-2">
+            <label class="my-1 mr-2" for="inlineFormInputName2">Tarea:</label>
+          </div>
+          <div class="col-12 col-sm-7 col-lg-7">
+            <input type="text" class="form-control mb-2 mr-sm-2" id="inlineFormInputName2" [formControl]="inputToDo">
+          </div>
+          <div class="col-12 col-sm-3">
+            <app-button nameEvent="Agregar" [disabled]="inputToDo.invalid" (onEvent)="addToDo()" [fullWidth]="true"></app-button>
+          </div>
+        </div>       
+      </div>
+      <div *ngFor="let toDo of toDoList; let i = index">
+        <app-list [tarea]="toDo" [id]="i" (delete)="deleteToDo($event)"></app-list>
+      </div>
+    </div>
+  </div>
+</div>

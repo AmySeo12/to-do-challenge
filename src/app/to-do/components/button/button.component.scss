@@ -1,0 +1,14 @@
+.btn-search {
+  background-color: #00b8df;
+  color: #fff;
+  border: 1px solid #00b8df;
+  border-radius: 26px;
+  padding: .5rem .8rem;
+  width: auto;
+  display: block;
+  margin: auto;
+
+  &.fullWidth {
+    width: 100%;
+  }
+}

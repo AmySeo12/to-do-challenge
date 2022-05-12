@@ -1,0 +1,15 @@
+.row {
+  height: 100vh;
+
+  p {
+    margin-top: -1.75rem;
+    background-color: #fff;
+    width: fit-content;
+    color: #00b8df;
+  }
+
+  .content {
+    border: 1px solid #00b8df;
+    border-radius: 20px;
+  }
+}
