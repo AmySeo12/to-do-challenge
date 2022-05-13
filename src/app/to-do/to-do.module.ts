@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import {  NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { ToDoRoutingModule } from './to-do-routing.module';
@@ -9,7 +9,11 @@ import { StoreModule } from '@ngrx/store';
 import { loginReducer } from './states/login.reducer';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ToDoGuard } from './guards/to-do.guard';
+import { IConfig, NgxMaskModule } from 'ngx-mask';
 
+const maskConfig: Partial<IConfig> = {
+  validation: false,
+};
 
 @NgModule({
   declarations: [
@@ -21,6 +25,7 @@ import { ToDoGuard } from './guards/to-do.guard';
     ToDoRoutingModule,
     FormsModule,
     ReactiveFormsModule,
+    NgxMaskModule.forRoot(maskConfig),
     ComponentsModule,
     StoreModule.forRoot({
       user: loginReducer

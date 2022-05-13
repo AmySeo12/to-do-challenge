@@ -31,8 +31,13 @@ export class ToDoListComponent implements OnInit {
   }
 
   deleteToDo(index: number) {
-    console.log(index)
     this.toDoList.splice(index, 1);
+  }
+
+  keyFunc(event: any) {
+    if(event.key === 'Enter') {
+      this.addToDo();
+    }
   }
 
 }
